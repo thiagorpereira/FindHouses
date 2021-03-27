@@ -19,4 +19,4 @@ export const SectionText = styled.Text`
   color: white;
   font-size: 24;
   font-weight: bold; 
-`;
+`; 
