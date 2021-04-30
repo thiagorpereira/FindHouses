@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 export const SectionView = styled.View`
   display: flex;
@@ -12,11 +12,11 @@ export const SectionView = styled.View`
 
 export const SectionImage = styled.Image`
   height: 150px;
-  width:150px;
+  width: 150px;
 `;
 
 export const SectionText = styled.Text`
   color: white;
   font-size: 24;
-  font-weight: bold; 
-`; 
+  font-weight: bold;
+`;
