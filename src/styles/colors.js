@@ -5,5 +5,5 @@ export const colors = {
   grey: '#E5E5E5',
   white: '#FFFFFF',
   purpleTransparent: 'rgba(45, 40, 91, 0.64)',
-  darkTransparent: 'rgba(18, 16, 37, 0.59)'
-}
+  darkTransparent: 'rgba(18, 16, 37, 0.59)',
+};
