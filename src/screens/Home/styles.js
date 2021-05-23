@@ -18,9 +18,8 @@ export const TopContainer = styled.View`
   justify-content: space-between;
   width: 100%;
   margin-bottom: ${({ theme }) => theme.metrics.px(36)}px;
-  /*   max-width: ${({ theme }) => theme.metrics.wp(100)}px; */
 `;
 
 export const TitleContainer = styled.View`
-  width: 60%;
+  width: 65%;
 `;
