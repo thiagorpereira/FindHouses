@@ -8,9 +8,9 @@ import StoryBook from '../storybook';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      {/* <HomeScreen /> */}
+      <HomeScreen />
       {/*       <SplashScreen /> */}
-      <StoryBook />
+      {/*       <StoryBook /> */}
     </ThemeProvider>
   );
 };
