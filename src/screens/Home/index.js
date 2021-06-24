@@ -1,11 +1,19 @@
-import React, { useEffect } from 'react';
-import { Title, IconButton, Input, HouseCard } from '../../components';
-import { ScreenContainer, TopContainer, TitleContainer } from './styles';
+import React, { useEffect, useState } from 'react';
+import { Title, IconButton, Input, HousesList } from '../../components';
+import {
+  ScreenContainer,
+  TopContainer,
+  TitleContainer,
+  ContentContainer,
+} from './styles';
 import { getHousesCall } from '../../services/calls';
 
 export const HomeScreen = () => {
+  const [housesListData, setHousesListData] = useState([]);
+
   const callGetHouses = async () => {
     const result = await getHousesCall();
+    setHousesListData(result.properties ? result.properties : []);
     console.log('ree', { result });
   };
   useEffect(() => {
@@ -13,14 +21,17 @@ export const HomeScreen = () => {
   }, []);
   return (
     <ScreenContainer>
-      <TopContainer>
-        <TitleContainer>
-          <Title>Encontre aqui seu imóvel</Title>
-        </TitleContainer>
-        <IconButton iconName="filter" />
-      </TopContainer>
-      <Input label="Localização" placeholder="Digite o Endereço" />
-      <HouseCard imgSource="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG91c2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+      <HousesList data={housesListData}>
+        <ContentContainer>
+          <TopContainer>
+            <TitleContainer>
+              <Title>Encontre aqui seu imóvel</Title>
+            </TitleContainer>
+            <IconButton iconName="filter" />
+          </TopContainer>
+          <Input label="Localização" placeholder="Digite o Endereço" />
+        </ContentContainer>
+      </HousesList>
     </ScreenContainer>
   );
 };

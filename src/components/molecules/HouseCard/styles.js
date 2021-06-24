@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const CardContainer = styled.TouchableOpacity`
-  width: 100%;
+  width: ${({ theme }) => theme.metrics.wp(86)}px;
   height: ${({ theme }) => theme.metrics.px(240)}px;
   border-radius: ${({ theme }) => theme.metrics.px(24)}px;
   background-color: ${({ theme }) => theme.colors.backgroundLight};

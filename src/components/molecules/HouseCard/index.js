@@ -13,17 +13,24 @@ import {
   TextContainerRight,
 } from './styles';
 
-export const HouseCard = ({ imgSource }) => {
+export const HouseCard = ({ imgSource, title, description, price }) => {
+  const formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
   return (
     <CardContainer>
       <CardImage source={{ uri: imgSource }} />
       <TextContainer>
         <TextContainerLeft>
-          <CardTitle>Casa a venda</CardTitle>
-          <CardDescription>L Norte QNL 17 Casa E, Taguatinga</CardDescription>
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
         </TextContainerLeft>
         <TextContainerRight>
-          <CardHightLightText>U$ 200.56</CardHightLightText>
+          <CardHightLightText>
+            {formattedPrice.format(price)}
+          </CardHightLightText>
         </TextContainerRight>
       </TextContainer>
     </CardContainer>
