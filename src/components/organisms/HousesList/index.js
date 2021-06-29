@@ -3,7 +3,6 @@ import { HouseCard } from '../../molecules';
 import { HouseListContainer } from './styles';
 
 export const HousesList = ({ data, children }) => {
-  console.log('array', data);
   return (
     <HouseListContainer
       data={data}

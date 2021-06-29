@@ -1,4 +1,4 @@
-/* // if you use expo remove this line
+// if you use expo remove this line
 import { AppRegistry } from 'react-native';
 
 import {
@@ -27,4 +27,3 @@ const StorybookUIRoot = getStorybookUI({});
 AppRegistry.registerComponent('%APP_NAME%', () => StorybookUIRoot);
 
 export default StorybookUIRoot;
- */

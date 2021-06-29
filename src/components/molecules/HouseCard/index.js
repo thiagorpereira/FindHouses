@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigation } from '@react-navigation/native';
 import {
   CardTitle,
   CardHightLightText,
@@ -14,13 +14,19 @@ import {
 } from './styles';
 
 export const HouseCard = ({ imgSource, title, description, price }) => {
+  const navigator = useNavigation();
+
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
 
+  const onClickItemContainer = () => {
+    navigator.navigate('Detail');
+  };
+
   return (
-    <CardContainer>
+    <CardContainer onPress={onClickItemContainer}>
       <CardImage source={{ uri: imgSource }} />
       <TextContainer>
         <TextContainerLeft>
