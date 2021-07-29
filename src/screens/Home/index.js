@@ -7,22 +7,26 @@ import {
   ContentContainer,
 } from './styles';
 import { getHousesCall } from '../../services/calls';
+import { useHousesStore } from '../../services/stores';
 
 export const HomeScreen = () => {
-  const [housesListData, setHousesListData] = useState([]);
+  const { housesList, setHouseList } = useHousesStore();
+  /* const [housesListData, setHousesListData] = useState([]); */
   const [loading, setLoading] = useState(true);
 
   const callGetHouses = async () => {
     const result = await getHousesCall();
-    setHousesListData(result.properties ? result.properties : []);
+    /*  setHousesListData(result.properties ? result.properties : []); */
+    setHouseList(result.properties ? result.properties : []);
     setLoading(false);
   };
   useEffect(() => {
     callGetHouses();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <ScreenContainer>
-      <HousesList data={housesListData} loading={loading}>
+      <HousesList data={housesList} loading={loading}>
         <ContentContainer>
           <TopContainer>
             <TitleContainer>

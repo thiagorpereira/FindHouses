@@ -10,6 +10,7 @@ import {
 } from '../../components';
 import { formattedPrice } from '../../utils';
 import { getHouseDetail } from '../../services/calls';
+import { useHousesStore } from '../../services/stores';
 import {
   ScreenContainer,
   ImageBackground,
@@ -17,10 +18,11 @@ import {
   FeaturesContainer,
 } from './styles';
 
-export const DetailScreen = ({ route, navigation }) => {
+export const DetailScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   const [houseDetail, setHouseDetail] = useState();
-  const { selectedHouse } = route.params;
+  // const { selectedHouse } = route.params;
+  const { selectedHouse } = useHousesStore();
 
   const callGetHouseDetail = async () => {
     const result = await getHouseDetail(selectedHouse.property_id);

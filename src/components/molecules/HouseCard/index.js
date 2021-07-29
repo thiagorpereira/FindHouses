@@ -6,6 +6,7 @@ import {
   CardDescription,
 } from '../../atoms/Text';
 import { formattedPrice } from '../../../utils';
+import { useHousesStore } from '../../../services/stores';
 import {
   CardContainer,
   CardImage,
@@ -16,9 +17,12 @@ import {
 
 export const HouseCard = ({ imgSource, title, description, price, item }) => {
   const navigator = useNavigation();
+  const { setSelectedHouse } = useHousesStore();
 
   const onClickItemContainer = () => {
-    navigator.navigate('Detail', { selectedHouse: item });
+    // navigator.navigate('Detail', { selectedHouse: item });
+    setSelectedHouse(item);
+    navigator.navigate('Detail');
   };
 
   return (
