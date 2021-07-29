@@ -8,3 +8,42 @@ export const ScreenContainer = styled.View`
   height: 100%;
   background-color: ${({ theme }) => theme.colors.backgroundDark};
 `;
+
+export const ImageBackground = styled.ImageBackground`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40%;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: ${({ theme }) => theme.metrics.px(48)}px;
+  padding-horizontal: ${({ theme }) => theme.metrics.px(24)}px;
+`;
+
+export const BottomScreenContainer = styled.ScrollView.attrs({
+  contentContainerStyle: {
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    paddingBottom: 48,
+  },
+})`
+  display: flex;
+  flex-direction: column;
+  padding: ${({ theme }) => theme.metrics.px(24)}px;
+  width: 100%;
+  height: ${({ theme }) => theme.metrics.hp(65)}px; /*  65% da tela */
+  background-color: ${({ theme }) => theme.colors.backgroundDark};
+  border-top-left-radius: ${({ theme }) => theme.metrics.px(24)}px;
+  border-top-right-radius: ${({ theme }) => theme.metrics.px(24)}px;
+  position: absolute;
+  bottom: 0;
+`;
+
+export const FeaturesContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  min-height: ${({ theme }) => theme.metrics.hp(12)}px;
+`;

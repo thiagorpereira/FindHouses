@@ -5,6 +5,7 @@ import {
   CardHightLightText,
   CardDescription,
 } from '../../atoms/Text';
+import { formattedPrice } from '../../../utils';
 import {
   CardContainer,
   CardImage,
@@ -13,16 +14,11 @@ import {
   TextContainerRight,
 } from './styles';
 
-export const HouseCard = ({ imgSource, title, description, price }) => {
+export const HouseCard = ({ imgSource, title, description, price, item }) => {
   const navigator = useNavigation();
 
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
   const onClickItemContainer = () => {
-    navigator.navigate('Detail');
+    navigator.navigate('Detail', { selectedHouse: item });
   };
 
   return (
